@@ -1,0 +1,165 @@
+<div header-directive></div>
+
+<section class="main-page" ng-controller="AccountController" ng-switch="currentStep">
+	<div class="step-1"  ng-switch-when="1">
+		<section class="candidate-content">
+			<form class="form-horizontal">
+			  <div class="form-group">
+			    <label for="fname" class="col-sm-4 control-label">First Name:- </label>
+			    <div class="col-sm-6">
+			      <input type="text" ng-model="$parent.firstname" class="form-control" id="fname" placeholder="FirstName">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="lname" class="col-sm-4 control-label">Last Name:- </label>
+			    <div class="col-sm-6">
+			      <input type="text" ng-model="$parent.lastname" class="form-control" id="lname" placeholder="LastName">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="age" class="col-sm-4 control-label">Age:- </label>
+			    <div class="col-sm-6">
+			      <input type="text" allow-number maxlength="3" ng-model="$parent.age" class="form-control" id="age" placeholder="Age">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="city" class="col-sm-4 control-label">City:- </label>
+			    <div class="col-sm-6">
+			    	<select class="form-control" name="city" id="city" ng-model="$parent.city">
+      					<option ng-repeat="city in arrCitie" value="{{city}}" ng-bind="city"></option>
+    				</select>
+			    </div>
+			  </div><div class="form-group">
+			    <label for="profession" class="col-sm-4 control-label">Profession:- </label>
+			    <div class="col-sm-6">
+			        <select name="profession" class="form-control" id="profession" ng-model="$parent.profession">
+      					<option ng-repeat="profession in arrProfession" value="{{profession}}" ng-bind="profession"></option>
+    				</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-3 col-sm-6">
+			      <button type="submit" class="btn btn-primary"  ng-click="reset()">Reset</button>
+			      <button type="submit" class="btn btn-primary" ng-disabled="!firstname || !lastname|| !age" ng-click="next()">Next</button>
+			    </div>
+			  </div>
+			</form>
+		</section>
+	</div>
+	<div class="step-2" ng-switch-when="2"> 
+		<section class="candidate-content">
+			<form class="form-horizontal">
+			  <div class="form-group">
+			    <label for="pannumber" class="col-sm-4 control-label">Pan Card:- </label>
+			    <div class="col-sm-6">
+			      <input type="text" ng-model="$parent.pannumber" class="form-control" id="pannumber" placeholder="PanNumber">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="gai" class="col-sm-4 control-label">Gross Annual Income:- </label>
+			    <div class="col-sm-6">
+			      <input type="text" ng-model="$parent.income" class="form-control" id="gai" placeholder="Gross Annual Income">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="cname" class="col-sm-4 control-label"> Company Name:- </label>
+			    <div class="col-sm-6">
+			      <input type="text" ng-model="$parent.companyName" class="form-control" id="cname" placeholder="Company Name">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="designation" class="col-sm-4 control-label">Designation:- </label>
+			    <div class="col-sm-6">
+			    	<select class="form-control" name="designation" id="designation" ng-model="$parent.designation">
+      					<option ng-repeat="designation in arrDesignation" value="{{designation}}" ng-bind="designation"></option>
+    				</select>
+			    </div>
+			  </div><div class="form-group">
+			    <label for="address" class="col-sm-4 control-label">Address:- </label>
+			    <div class="col-sm-6">
+			      		<textarea  ng-model="$parent.address" class="form-control" style="height:65px;" rows="3" id="address" placeholder="Address"></textarea>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="pcode" class="col-sm-4 control-label">Pin Code:- </label>
+			    <div class="col-sm-6">
+			      <input type="text" ng-model="$parent.pincode" class="form-control" id="pcode" placeholder="Pin Code">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-3 col-sm-6">
+			    	<button type="submit" class="btn btn-primary"  ng-click="prev()">Prev</button>
+			      <button type="submit" class="btn btn-primary"  ng-click="reset()">Reset</button>
+			      <button type="submit" class="btn btn-primary" ng-disabled="!pannumber || !income|| !designation || !address||!pincode" ng-click="next()">Next</button>
+			    </div>
+			  </div>
+			</form>
+		</section>
+	</div>
+	<div class="step-3" ng-switch-when="3"> 
+		<section class="candidate-content">
+			<form class="form-horizontal">
+			  <div class="form-group">
+			    <label for="accounttype" class="col-sm-7 control-label">Account Type:- </label>
+			    <div class="col-sm-5">
+			    	<select class="form-control" name="accounttype" id="accounttype" ng-model="$parent.accounttype">
+      					<option ng-repeat="accounttype in arrAccountType" value="{{accounttype}}" ng-bind="accounttype"></option>
+    				</select>
+			    </div>
+			  <div class="form-group">
+			    <label  class="col-sm-7 control-label">Apply For Fixed Deposit ? :- </label>
+			    <div class="col-sm-5">
+			    	<label class="radio-inline"><input type="radio" name="atype" ng-model="$parent.isApply" value="yes">Yes</label>
+			    	<label class="radio-inline"><input type="radio" name="atype" ng-model="$parent.isApply" value="no">No</label>
+			    </div>
+			  </div>
+
+
+			  <div class="form-group">
+			    <label  class="col-sm-7 control-label">Holding Any CreditCard from ABC Bank:- </label>
+			    <div class="col-sm-5">
+			    	<label class="radio-inline"><input type="radio" name="ccard" ng-model="$parent.hasCCard" value="yes">Yes</label>
+			    	<label class="radio-inline"><input type="radio" name="ccard" ng-model="$parent.hasCCard" value="no">No</label>
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label  class="col-sm-7 control-label">Agree T & C:- </label>
+			    <div class="col-sm-5">
+			    	<label class="radio-inline"><input type="radio" name="tc" ng-model="$parent.tc" value="yes">Yes</label>
+			    	<label class="radio-inline"><input type="radio" name="tc" ng-model="$parent.tc" value="no">No</label>
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <div class="col-sm-offset-3 col-sm-6">
+			    	<button type="submit" class="btn btn-primary"  ng-click="prev()">Prev</button>
+			      <button type="submit" class="btn btn-primary"  ng-click="reset()">Reset</button>
+			      <button type="submit" class="btn btn-primary" ng-disabled="!tc || !hasCCard|| !isApply||!accounttype" ng-click="apply()">Apply</button>
+			    </div>
+			  </div>
+			</form>
+		</section>
+	</div>
+	<div class="panel panel-default step-4" ng-switch-when="4">
+	   <div class="panel-heading">Customer Details: Hi <i><b style="color:green">{{customer.firstname }}</b></i></div>
+	  	<div class="panel-body">
+	    	<p> FirstName: {{customer.firstname}}</p>
+	    	<p> LastName: {{customer.firstname}}</p>
+	    	<p> age: {{customer.age}}</p>
+	    	<p> City: {{customer.city}}</p>
+	    	<p> Profession: {{customer.profession}}</p>
+	    	<p> PAN: {{customer.pan}}</p>
+	    	<p> Income: {{customer.income}}</p>
+	    	<p> CompanyName: {{customer.companyname}}</p>
+	    	<p> Designation: {{customer.designation}}</p>
+	    	<p> Address: {{customer.address}}</p>
+	    	<p> PinCode: {{customer.pincode}}</p>
+	    	<p> AccountType: {{customer.accounttype}}</p>
+	    	</b>
+			  <button type="submit" class="btn btn-primary"  ng-click="ok()">OK</button>
+	  	</div>
+	</div>
+</section>
+
+<div footer-directive></div>

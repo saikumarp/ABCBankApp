@@ -1,0 +1,109 @@
+@font-face {
+    font-family:  'Bank-font';
+    src: url('FontleroyBrownNF.ttf');
+}
+
+body {
+    overflow: hidden;
+    background-color:  rgb(240, 241, 243);
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+   color: rgba(197, 199, 46, 0.86);
+}
+
+.navbar {
+    font-family: Bank-font;
+    text-align: center;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    box-sizing: border-box;
+    margin: auto;
+    border: 2px solid rgba(197, 199, 46, 0.86);
+    color: rgba(197, 199, 46, 0.86);
+    background-color: rgb(60, 68, 70);
+}
+.corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(197, 199, 46, 0.86);
+}
+
+.bottom-left {
+    bottom: 0px;
+    left: 0px;
+}
+
+.bottom-right {
+    bottom: 0px;
+    right: 0px;
+}
+
+.top-left {
+    top: 0px;
+    left: 0px;
+}
+
+.top-right {
+    top: 0px;
+    right: 0px;
+} 
+
+
+.header {
+    font-size: 82px;
+    top: 0px;
+    height: 100px;
+}
+
+.apply-content {
+    position: absolute;
+    top: 107px;
+    bottom: 50px;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    background-color: rgb(154, 66, 66);
+    font-family: Bank-font;
+    font-size: 48px;
+    color: rgba(197, 199, 46, 0.86);
+    border-radius: 50%;
+    line-height: 5;
+    margin: auto;
+    left: 0px;
+    border: 10px solid rgba(197, 199, 46, 0.86);
+    right: 0px;
+    cursor: pointer;
+}
+
+.apply-content:hover {
+    box-shadow: 0px 0px 16px 0px rgba(105, 180, 250, 0.75) !important;
+}
+
+.main-page {
+    width: 510px;
+    top: 150px;
+    bottom: 150px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    box-shadow: 0px 1px 3px 0px rgba(75, 75, 75, 0.75) !important;
+    padding: 15px;
+    background-color: white;
+}
+
+
+
+.footer {
+    font-size: 39px;
+    bottom: 0px;
+    height: 50px;
+}
